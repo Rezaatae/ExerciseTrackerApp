@@ -18,6 +18,12 @@ connection.once('open', () => {
     console.log("Mongoose database connection established successfully");
 });
 
+const exercisesRouter = require('./routes/exercises');
+const userRouter = require('./routes/users');
+
+app.use('/exercises', exercisesRouter);
+app.use('/users', userRouter);
+
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
 });
