@@ -4,9 +4,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
-    <div className="container">
-      Hello world!
-    </div>
+    <Router>
+      <Navbar />
+      <br />
+      <Route path="/" exact component={ExercisesList} />
+      <Route path="/edit/:id" component={EditExcercise} />
+      <Route path="/create" component={CreateExcercise} />
+      <Route path="/user" component={CreateUser} />
+    </Router>
   );
 }
 
